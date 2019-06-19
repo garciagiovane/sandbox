@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  guithub:
+    build: "./Github"
+    container_name: "github"
+    restart: always
+    ports:
+      - "8083:8080"
+
+  twitter:
+    build: "./Twitter"
+    container_name: "twitter"
+    restart: always
+    ports:
+      - "8082:8080"  
+  api:
+    build: "./Totalizador"
+    container_name: "totalizador"
+    restart: always
+    ports:
+      - "8080:8080"

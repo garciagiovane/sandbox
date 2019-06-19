@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora com Spring</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .form {
+            width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="form">
+        <h3>Calculadora com Spring</h3>
+        <form action="calculadora" method="post" autocomplete="off">
+            <div class="form-group">
+                <label for="valorA">Digite o valor de A</label>
+                <input type="text" name="valorA" id="valorA" class="form-control form-control-sm" required>
+            </div>
+            <div class="form-group">
+                <label for="valorB">Digite o valor de B</label>
+                <input type="text" name="valorB" id="valorB" class="form-control form-control-sm" required>
+
+            </div>
+            <div class="form-group">
+                <label for="operacao">Selecione a operação</label>
+                <select class="form-control form-control-sm" name="operacao" id="operacao">
+                    <option value="+" selected>Somar</option>
+                    <option value="-">Subtrair</option>
+                    <option value="*">Multiplicar</option>
+                    <option value="/">Dividir</option>
+                    <option value="^">Potenciação</option>
+                </select>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Calcular">
+        </form>
+    </div>
+</div>
+</body>
+</html>

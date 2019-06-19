@@ -1,0 +1,18 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile([
+            'com.google.inject:guice:4.2.2'
+    ])
+
+    testCompile([
+            'org.mockito:mockito-all:1.10.19',
+            'junit:junit:4.12'
+    ])
+}

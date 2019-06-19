@@ -1,0 +1,25 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.5.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.garciagiovane.cloud'
+sourceCompatibility = '1.8'
+def hystrixVersion="1.5.12"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile(
+        'org.springframework.boot:spring-boot-starter-web',
+        'org.eclipse.mylyn.github:org.eclipse.egit.github.core:2.1.5',
+        'com.google.code.gson:gson:2.8.5',
+        "com.netflix.hystrix:hystrix-core:${hystrixVersion}",
+        "com.netflix.hystrix:hystrix-metrics-event-stream:${hystrixVersion}"
+    )
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}

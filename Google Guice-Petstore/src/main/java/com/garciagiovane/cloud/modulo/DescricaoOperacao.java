@@ -1,0 +1,5 @@
+package com.garciagiovane.cloud.modulo;
+
+public enum DescricaoOperacao {
+    BANHO_MOLHADO_SEM_PERFUME, BANHO_MOLHADO_COM__PERFUME, BANHO_SECO_SEM_PERFUME, BANHO_SECO_COM_PERFUME, TOZA_CURTA, TOZA_LONGA, TESTE_PARA_ERRO;
+}
