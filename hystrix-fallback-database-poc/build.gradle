@@ -1,0 +1,19 @@
+plugins {
+	id 'java'
+}
+
+repositories {
+    jcenter()
+}
+
+def hystrixVersion="1.5.12"
+
+dependencies {
+	compile([
+		'org.springframework.boot:spring-boot-starter-web:2.1.5.RELEASE',
+        "com.netflix.hystrix:hystrix-core:${hystrixVersion}",
+		"com.netflix.hystrix:hystrix-metrics-event-stream:${hystrixVersion}",
+		'mysql:mysql-connector-java:8.0.15'
+	])
+    testImplementation 'junit:junit:4.12'
+}
