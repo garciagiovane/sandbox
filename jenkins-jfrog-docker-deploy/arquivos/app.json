@@ -1,0 +1,33 @@
+{
+  "builders": [{
+    "type": "docker",
+    "image": "openjdk:8",
+    "commit": "true",
+    "changes": [
+      "ENTRYPOINT /opt/apache-tomcat-9.0.20/bin/catalina.sh run"
+    ]
+  }],
+ "provisioners": [{
+  "type": "shell",
+  "inline": [
+    "apt-get -y update",
+    "apt-get install -y software-properties-common",
+    "apt-get -y update",
+    "apt-get install -y ansible"
+  ]
+},{
+  "type": "ansible-local",
+  "playbook_file": "giovane-pacheco/tema-final-01/arquivos/ansible.yml"
+  }, {
+  "type": "file",
+  "source": "./tema-final-01-unspecified.war",
+  "destination": "opt/apache-tomcat-9.0.20/webapps/"
+}],
+    "post-processors": [
+    [{
+        "type": "docker-tag",
+        "repository": "rafanleite/grupo04_final",
+        "tag": "latest"
+      }]
+  ]
+}

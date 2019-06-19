@@ -1,0 +1,11 @@
+ - name: tema-final
+   hosts: localhost
+   become: true
+   become_user: root
+
+   tasks:
+   - name: download Tomcat
+     get_url: url=http://mirror.nbtelecom.com.br/apache/tomcat/tomcat-9/v9.0.20/bin/apache-tomcat-9.0.20.tar.gz dest=/opt/
+
+   - name: Unpac
+     unarchive: src=/opt/apache-tomcat-9.0.20.tar.gz dest=/opt/
