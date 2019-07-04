@@ -1,0 +1,34 @@
+plugins {
+	id 'java'
+	id 'application'
+}
+
+def hystrixVersion = "1.5.12"
+def springStarter = '1.5.9.RELEASE'
+def mysqlConnectorVersion = '8.0.15'
+def gsonVersion = '2.8.5'
+def feignVersion = '8.18.0'
+
+mainClassName='com.grupo04.jtscloudnative.temafinal2.playlistservice.PlaylistserviceApplication'
+
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile([
+            "com.netflix.hystrix:hystrix-core:${hystrixVersion}",
+            "com.netflix.hystrix:hystrix-metrics-event-stream:${hystrixVersion}",
+            "org.springframework.boot:spring-boot-starter-web:${springStarter}",
+            "mysql:mysql-connector-java:${mysqlConnectorVersion}",
+            "com.google.code.gson:gson:${gsonVersion}",
+            "org.springframework.boot:spring-boot:${springStarter}",
+            "org.springframework.boot:spring-boot-starter-actuator:${springStarter}",
+            "com.netflix.feign:feign-core:${feignVersion}",
+    ])  
+}
+
+
+

@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+mainClassName='com.grupo04.jtscloudnative.temafinal2.appservice.AppServiceApplication'
+
+def hystrixVersion='1.5.12'
+def SpringVersion='1.5.9.RELEASE'
+def gsonVersion='gson:2.8.5'
+def feignVersion='8.18.0'
+def ribbonVersion='2.7.17'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+	compile ([
+		"org.springframework.boot:spring-boot-starter-web:${SpringVersion}",
+		"com.google.code.gson:${gsonVersion}",
+		"com.netflix.hystrix:hystrix-core:${hystrixVersion}",
+        "com.netflix.hystrix:hystrix-metrics-event-stream:${hystrixVersion}",
+        "com.netflix.feign:feign-core:${feignVersion}",
+        "com.netflix.feign:feign-gson:${feignVersion}",
+        "org.springframework.boot:spring-boot:${SpringVersion}",
+        "org.springframework.boot:spring-boot-starter-actuator:${SpringVersion}",
+        "com.netflix.ribbon:ribbon:${ribbonVersion}"
+	])
+	
+    testCompile([
+    	'junit:junit:4.12'
+    ]) 
+}
